@@ -21,7 +21,7 @@ static const char* FilenameEncodeUrl(char * pszDest, size_t cbDest, const char *
     size_t w = 0;
     size_t n = strlen(in);
     
-    w += snprintf(pszDest, sizeof(pszDest), "file:///")-1;
+    w += snprintf(pszDest, cbDest, "file:///");
     for (size_t i=0; i<n; i++) {
         if (in[i] <= 0x7F) {
             if (w+1 > cbDest) return NULL;
